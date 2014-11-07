@@ -11,7 +11,9 @@ get '/' do
 end
 
 post '/' do
-  if params[:payload]["action"] == "labeled" 
-    logger.info params[:payload]["issue"]["number"]
+  if params["payload"]
+    logger.info "payload there"
+    logger.info params["payload"]["action"] 
+    logger.info params["payload"]["issue"]["number"]
   end 
 end
