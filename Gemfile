@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.1.3"
+ruby "2.1.2"
+
 gem 'sinatra'
 gem 'octokit', "~> 3.0"
+
+gem 'pry'
+
