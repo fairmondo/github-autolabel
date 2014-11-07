@@ -6,12 +6,12 @@ require 'json'
 client = Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
 
 get '/' do
-  binding.pry
+  logger.info "test"
   "Hello #{client.user}"
 end
 
 post '/' do
+  logger.info params.to_json
   if params[:action] == "labeled" 
-    logger.info params.to_json
   end 
 end
