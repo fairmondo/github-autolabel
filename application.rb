@@ -33,6 +33,12 @@ post '/' do
 		client.add_labels_to_an_issue("fairmondo/fairmondo",issue,["ready"])
 		client.update_issue_milestone("fairmondo/fairmondo",issue,15)
 	  end
-    end
+    elsif payload["action"] == "opened"
+	  issue = payload["issue"]["number"]
+	  user = payload["issue"]["user"]["login"] 
+	  if user != "annakress"
+	    client.update_issue_milestone("fairmondo/fairmondo",issue,15)
+	  end
+	end
   end 
 end
