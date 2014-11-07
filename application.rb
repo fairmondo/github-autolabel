@@ -13,7 +13,7 @@ end
 post '/' do
   if params["payload"]
     logger.info "payload there"
-    logger.info JSON.decode(params["payload"])
-    logger.info JSON.decode(params["payload"]).class
+    logger.info JSON.parse(params["payload"])
+    logger.info JSON.parse(params["payload"]).class
   end 
 end
