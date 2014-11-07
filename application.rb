@@ -11,6 +11,7 @@ get '/' do
 end
 
 post '/' do
+  logger.info params["payload"]
   if params["payload"]
     logger.info "payload there"
     logger.info params["payload"]["action"] 
