@@ -11,7 +11,7 @@ get '/' do
 end
 
 post '/' do
-  logger.info params.to_json
-  if params[:action] == "labeled" 
+  if params[:payload]["action"] == "labeled" 
+    logger.info params[:payload]["issue"]["number"]
   end 
 end
