@@ -11,10 +11,10 @@ get '/' do
 end
 
 post '/' do
-  logger.info params["payload"]
+  logger.info params["payload"].class
   if params["payload"]
     logger.info "payload there"
-    logger.info params["payload"]["action"] 
+    logger.info params["payload"]["action"].class
     logger.info params["payload"]["issue"]["number"]
   end 
 end
