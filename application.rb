@@ -11,10 +11,9 @@ get '/' do
 end
 
 post '/' do
-  logger.info params["payload"].class
   if params["payload"]
     logger.info "payload there"
-    logger.info params["payload"]["action"].class
-    logger.info params["payload"]["issue"]["number"]
+    logger.info JSON.decode(params["payload"])
+    logger.info JSON.decode(params["payload"]).class
   end 
 end
